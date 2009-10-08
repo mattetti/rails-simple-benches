@@ -1,5 +1,6 @@
-$:.push "rails/activesupport/lib"
-$:.push "rails/actionpack/lib"
+$LOAD_PATH.unshift "#{File.dirname(__FILE__)}/../lib"
+$LOAD_PATH.unshift "#{File.dirname(__FILE__)}/../../activesupport/lib"
+Dir.glob('vendored_gems/gems/*').map{|path| $:.unshift(File.join(File.expand_path(path), 'lib')) }
 
 require "action_controller"
 

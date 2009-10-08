@@ -4,6 +4,7 @@ ENV['NO_RELOAD'] ||= '1'
 
 $LOAD_PATH.unshift "#{File.dirname(__FILE__)}/../lib"
 $LOAD_PATH.unshift "#{File.dirname(__FILE__)}/../../activesupport/lib"
+Dir.glob('vendored_gems/gems/*').map{|path| $:.unshift(File.join(File.expand_path(path), 'lib')) }
 require 'action_pack'
 require 'action_controller'
 require 'action_controller/new_base' if ENV['NEW']
